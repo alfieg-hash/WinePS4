@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/iHaiDeeZ/WinePS4/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/iHaiDeeZ/WinePS4?label=release&color=f2f5fb"></a>
+  <a href="https://github.com/alfieg-hash/WinePS4/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/alfieg-hash/WinePS4?label=release&color=f2f5fb"></a>
   <img alt="PS4 homebrew" src="https://img.shields.io/badge/PS4-homebrew-1f5fd6">
   <img alt="Wine 11" src="https://img.shields.io/badge/Wine-11.0-8e1838">
   <a href="LICENSE"><img alt="LGPL-2.1" src="https://img.shields.io/badge/license-LGPL--2.1-41b0ff"></a>
@@ -12,7 +12,7 @@
 <h3 align="center">Windows programs on the PS4.</h3>
 
 <p align="center">
-  <a href="https://github.com/iHaiDeeZ/WinePS4/releases/latest"><b>⬇ Get the latest release</b></a> ·
+  <a href="https://github.com/alfieg-hash/WinePS4/releases/latest"><b>⬇ Get the latest release</b></a> ·
   <a href="#getting-started">Getting started</a> ·
   <a href="#controls">Controls</a> ·
   <a href="#the-desktop">The desktop</a> ·
@@ -84,7 +84,7 @@ DLLs stand in for Windows'.
 keyboard helps: without one, programs get the mouse and the text you type on the PS4's keyboard, but no Enter, Esc,
 Tab or arrow keys.
 
-1. Download **`WinePS4-vXX.YY.pkg`** from the [releases page](https://github.com/iHaiDeeZ/WinePS4/releases/latest),
+1. Download **`WinePS4-vXX.YY.pkg`** from the [releases page](https://github.com/alfieg-hash/WinePS4/releases/latest),
    copy it to the PS4 (for example to `/data/pkg` over FTP), install it with GoldHEN's **Package Installer** and
    start **WinePS4** from the home screen.
 2. The first start copies Windows' files into `/data/WinePS4/prefix`, which takes about a minute (the Terminal says
