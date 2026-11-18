@@ -95,6 +95,10 @@ Tab or arrow keys.
 4. **Steam:** download `SteamSetup.exe` from [store.steampowered.com](https://store.steampowered.com) on a PC, copy it
    to **`/data/WinePS4/SteamSetup.exe`**, then open **Start > Steam**. Once Steam is installed, the same pin starts
    it. Click a field to sign in with the PS4's keyboard, or use a USB keyboard.
+5. **Microsoft Edge:** download `MicrosoftEdgeSetup.exe` from [microsoft.com/edge](https://www.microsoft.com/edge)
+   (or the offline `MicrosoftEdgeEnterpriseX64.msi`) on a PC, copy it to **`/data/WinePS4/`**, then open
+   **Start > Microsoft Edge**. Once Edge is installed, the same pin starts it. Keep **Settings > Chromium programs
+   in one process** on, so it fits in the PS4's seven processes.
 
 > **Tip:** right-click a program (Square) in Files, or its button on the taskbar, and choose **Create shortcut on
 > the desktop** to keep it on the desktop. Steam's game shortcuts (`.url`) work there too.
@@ -212,6 +216,7 @@ Everything lives in **`/data/WinePS4/`**:
 - `prefix/`: Wine's prefix. `prefix/drive_c` is the C: drive, and `C:\users\ps4` is your Windows user folder
   (Desktop, Documents, Downloads, ...). Z: is the whole console.
 - `SteamSetup.exe`: Steam's installer, when you put it there.
+- `MicrosoftEdgeSetup.exe` or `MicrosoftEdgeEnterpriseX64.msi`: Edge's installer, when you put it there.
 - `run.txt`: a program to start every time WinePS4 starts, one argument per line (lines starting with `#` are
   skipped).
 - `env.txt`: the Settings switches, and any environment variable as `NAME=value`.

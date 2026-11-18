@@ -3179,7 +3179,7 @@ struct Pin {
 const Pin PINS[] = {
     {"Files", Icon::Folder, 0}, {"Terminal", Icon::Terminal, 1}, {"Settings", Icon::Settings, 2},
     {"Task Manager", Icon::Gauge, 9}, {"C: drive", Icon::Drive, 3}, {"Steam", Icon::Package, 8},
-    {"Wine test", Icon::Program, 4}, {"32-bit test", Icon::Program, 6}, {"Window test", Icon::Program, 7},
+    {"Microsoft Edge", Icon::Program, 11}, {"Wine test", Icon::Program, 4}, {"32-bit test", Icon::Program, 6}, {"Window test", Icon::Program, 7},
 };
 // the pins in rows of 6 (as Windows 11's), "Recent programs" below them
 constexpr int PINS_PER_ROW = 6, RECENT_TOP = 370;
@@ -3256,6 +3256,27 @@ void start_steam() {
         show_message("Steam", "Put SteamSetup.exe (from store.steampowered.com) in /data/WinePS4 to install Steam.");
 }
 
+// Microsoft Edge: the browser once it is installed, else its installer, put in WinePS4's folder. Edge is
+// Microsoft's, so WinePS4 doesn't bring it: MicrosoftEdgeSetup.exe (www.microsoft.com/edge) downloads it,
+// the offline MicrosoftEdgeEnterpriseX64.msi installs it without the network. Its windows run in one
+// process with Settings > Chromium programs in one process on, as Steam's web views do.
+void start_edge() {
+    for (const char *folder : {"/Program Files (x86)/Microsoft/Edge/Application/", "/Program Files/Microsoft/Edge/Application/"}) {
+        const std::string edge = existing_path(std::string(C_DRIVE) + folder + "msedge.exe");
+        if (is_file(edge)) {
+            run_program(edge);
+            return;
+        }
+    }
+    for (const char *setup : {"MicrosoftEdgeSetup.exe", "MicrosoftEdgeEnterpriseX64.msi"})
+        if (is_file(std::string(DATA_DIR) + "/" + setup)) {
+            run_program(std::string(DATA_DIR) + "/" + setup);
+            return;
+        }
+    show_message("Microsoft Edge", "Put MicrosoftEdgeSetup.exe (from microsoft.com/edge) or MicrosoftEdgeEnterpriseX64.msi "
+                                   "in /data/WinePS4 to install Edge.");
+}
+
 void start_action(int action) {
     popup = Popup::None;
     switch (action) {
@@ -3270,6 +3291,7 @@ void start_action(int action) {
     case 8: start_steam(); break;
     case 9: open_window(Kind::TaskManager); break;
     case 10: open_window(Kind::Files, RECYCLE_DIR); break;
+    case 11: start_edge(); break;
     }
 }
 
